@@ -2,6 +2,8 @@ const express = require('express');
 const nodemailer = require("nodemailer");
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
+
+var port = process.env.PORT || 8080;
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,8 +22,8 @@ MongoClient.connect('mongodb://test:lightnn21@ds015849.mlab.com:15849/crud-test'
 	if(err) return console.log(err);
 
 	db = database;
-	app.listen(8080, function() {
-		console.log('Listening on 8080');
+	app.listen(port, function() {
+		console.log('Listening on ' + port);
 	});
 });
 
