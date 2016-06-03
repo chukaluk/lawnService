@@ -34,10 +34,10 @@ MongoClient.connect('mongodb://test:lightnn21@ds015849.mlab.com:15849/crud-test'
  *
  */ 
 var smtpTransport = nodemailer.createTransport("SMTP", {
-	service: "Gmail",
+	service: "hotmail",
 	auth: {
-		user: "charles.humphries.jr@gmail.com",
-		pass: "lightnn21",
+		user: "grassCutters21@hotmail.com",
+		pass: "testing1",
 	}
 });
 
