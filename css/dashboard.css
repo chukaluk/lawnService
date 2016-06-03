@@ -1,0 +1,19 @@
+body {
+	height: 1000px;
+	padding-bottom: 0;
+}
+
+footer { 
+
+  	bottom: 0;
+  	width: 100%;
+ 	height: 60px;
+	background: white;
+	margin-top: 10%;
+}
+
+.courseBtn {
+	background: white;
+	width: 100%;
+	margin-bottom: 5%;
+}

@@ -1,0 +1,98 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { ... }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }
+
+* {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  body {
+  	padding-bottom: 10%;
+  }
+
+  #info {
+  	padding-left: 8%;
+  }
+
+  p {
+  	padding-left: 3%;
+  }
+
+  .techName {
+    padding-left: 2%;
+  }
+
+  .techName .btn-group {
+    display: inline-block;
+  }
+
+  .left {
+    float:left; 
+    width:33%;
+    padding-left: 5%;
+  }
+
+  .jumbotron {
+    background-color: rgba(255, 255, 255, 0.5);
+
+  }
+
+  .jumbotron a:hover {
+    color: black;
+  }
+
+  #nav {
+    background: transparent;
+    border-style: none;
+    box-shadow: none;
+    color: white;
+  }
+
+  #nav a {
+    color: white;
+  }
+
+  #nav a:hover {
+    color: black;
+  }
+
+  #buttonHolder {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #week {
+    text-align: center;
+  }
+
+  .header {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .format {
+    color: #D3D3D3;
+  }
+
+  #padding {
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+  #message {
+    width: 35%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #infoOne, #infoTwo, #infoThree, #b1, #b2, #b3{
+    padding-left: 5%;
+  }
