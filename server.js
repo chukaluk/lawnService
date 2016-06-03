@@ -2,6 +2,7 @@ const express = require('express');
 const nodemailer = require("nodemailer");
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
+const favicon = require('serve-favicon');
 
 var port = process.env.PORT || 8080;
 const app = express();
@@ -10,6 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/css", express.static(__dirname + '/css'));
 app.use("/js", express.static(__dirname + '/js'));
 app.use("/images", express.static(__dirname + '/images'));
+app.use(favicon(__dirname + '/images/favicon.ico'));
 app.set('view engine', 'ejs');
 
 /*
