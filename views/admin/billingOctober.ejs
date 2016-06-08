@@ -13,14 +13,24 @@
   <link href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" rel="stylesheet" />
   <link href="/css/style.css" rel="stylesheet" />
   <link href="/css/header.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
   <!--fonts-->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
   <!--scripts-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="/js/test.js"></script>
 
 </head>
+<nav class="navbar navbar-default" id="nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Grass Cutters</a>
+    </div>
+  </div>
+</nav>
+
 <style>
     body {
       background-image: url(../images/lightGrass.jpg);
@@ -31,123 +41,81 @@
       padding-top: 8%;
     }
   </style>
-<nav class="navbar navbar-default" id="nav">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Grass Cutters</a>
-    </div>
-  </div><!-- /.container-fluid -->
-</nav>
-
-
 <body>
 
 <div class="customers">
   <div class="header">
-    <h1 id="week">October Billing Statements</h1>
+    <h1 id="week">October Billing Satements</h1>
     <a href="/billingSeptember" class="btn btn-success">Previous Month</a>
-    <div id="message"></div>
+    <div id="padding"><div id="message"></div></div>
   </div>
   <div class="left">
-    <% for(var i=0; i<customers.length; i++) { %>
-        <div id="info">
-            <div class="test" id="billInfo"></div>
+      <% for(var i=0; i<customers.length; i++) { %>
+      <% if(customers[i].techID == 1) { %>
+        <div id="infoOne">
+            <div class="test" id="techOne"></div>
            <script>
-
-           /*
-            *  When the document is loaded, the following happens:
-            *   
-            *  1. divNum is assigned to the current value of i
-            *  2. name is set to the name of the customer at i
-                  address is set to the name of the customer at i
-                  email is set to the name of the customer at i
-                  temp is set to the start date of the customer at i
-               3. Turn temp into a date object
-               4. Set the begin date for users to sign up (2/15/2016)
-               5. Set the end date for service to end (10/31/2016)
-               6. Set twoWeek to the sign up date
-               7. While twoWeek is after the beginDate and before the endDate,
-                   get every two week interval between the start and end, then
-                   push into an array (all of the customers service dates)
-              8.  Create a div for each customer and make the id the value at i
-              9.  Append the name and email of customer to the newly created div
-              10. Loop through the array that holds the customers service dates,
-                    find all the dates that are within the month of April,
-                    append those dates to the created div
-              11. Create a button, then when that button is clicked
-                   create mailoptions to send the email
-              12. Alert success when sent
-            */
-              $(document).ready(function(){
                 var divNum = "<%= i %>";
 
                 var name = "<%= customers[i].name %>";
                 var address = "<%= customers[i].address %>";
                 var email = "<%= customers[i].email %>"; 
                 var temp = "<%= customers[i].sDate %>";
-                var date = new Date(temp.toString().replace( /(\d{2})\/(\d{2})\/(\d{4})/, "$1/$2/$3"));
-                var twoWeek = date;
-                var beginDate = new Date("2/15/2016");
-                var endDate = new Date("10/31/2016");
-                var pretty;
-                var counter = 0;
-                var dates = new Array();
+                var tech = "techOne";
+                var month = "October";
+                var monthID = 9;
 
+                monthlyBilling(divNum, name, address, email, temp, tech, month, monthID);
 
-
-                while(twoWeek > beginDate && twoWeek < endDate) {
-                  twoWeek.setDate(date.getDate() + 14);
-                  if(twoWeek > endDate) {
-                    break;
-                  } else {
-                    pretty = twoWeek.toLocaleDateString();
-                    dates.push(pretty);
-                  }
-                }
-
-                var tempDiv = $('<div></div>');
-                $('#billInfo').append(tempDiv);
-                tempDiv.attr("id", divNum); 
-
-                var tempName = $('<h1>' + name + '</h1>');
-                $('#' + divNum + '').append(tempName);
-
-                var tempEmail = $('<h3>' + email + '</h3>');
-                $('#' + divNum + '').append(tempEmail);
-
-                for(var i = 0; i< dates.length; i++) {
-                  var toDate = new Date(dates[i]);
-
-                  if(toDate.getMonth() == 9) {
-                    var tempDate = $('<p>Service Date: ' + dates[i] + ' </p>')
-                    $('#' + divNum + '').append(tempDate);
-                    counter++;
-                  }
-                }
-
-                var tempButton = $('<button>Send Email</button>');
-                $(tempButton).attr("class", "btn btn-success");
-                $('#' + divNum + '').append(tempButton);
-
-                var from, to, subject, text, name, services, amount;
-
-                $('#' + divNum + '  button').click(function() {
-                  to = $('#' + divNum + '  h3').text();
-                  name = $('#' + divNum + '  h1').text();
-                  subject = "October Billing Statement - Grass Cutters";
-                  services = $('#' + divNum + '  p').text();
-                  amount = counter * 50;
-                  text = "Hello " + name + ", here is your billing statement for the month of October: " + services + "\nTotal Bill: $" + amount;
-                  $.get('/sentBill', {to:to, subject:subject, text:text});
-                  $("#message").text("Email Sent!");
-                  $("#message").attr("class", "alert alert-success");
-                  
-                });
-
-              });
               </script>
         </div>
+      <% } %>
+    <% } %>
+    </div>
+
+    <div class="left">
+      <% for(var i=0; i<customers.length; i++) { %>
+      <% if(customers[i].techID == 2) { %>
+        <div id="infoTwo">
+            <div class="test" id="techTwo"></div>
+           <script>
+                var divNum = "<%= i %>";
+
+                var name = "<%= customers[i].name %>";
+                var address = "<%= customers[i].address %>";
+                var email = "<%= customers[i].email %>"; 
+                var temp = "<%= customers[i].sDate %>";
+                var tech = "techTwo";
+                var month = "October";
+                var monthID = 9;
+
+                monthlyBilling(divNum, name, address, email, temp, tech, month, monthID);
+              </script>
+        </div>
+      <% } %>
+    <% } %>
+    </div>
+
+    <div class="left">
+      <% for(var i=0; i<customers.length; i++) { %>
+      <% if(customers[i].techID == 3) { %>
+        <div id="infoThree">
+            <div class="test" id="techThree"></div>
+           <script>
+                var divNum = "<%= i %>";
+
+                var name = "<%= customers[i].name %>";
+                var address = "<%= customers[i].address %>";
+                var email = "<%= customers[i].email %>"; 
+                var temp = "<%= customers[i].sDate %>";
+                var tech = "techThree";
+                var month = "October";
+                var monthID = 9;
+
+                monthlyBilling(divNum, name, address, email, temp, tech, month, monthID);
+              </script>
+        </div>
+      <% } %>
     <% } %>
     </div>
 </div>

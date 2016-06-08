@@ -140,8 +140,10 @@ app.get('/sent', (req, res) => {
 		smtpTransport.sendMail(mailOptions, function(error, response){
 			if(error) {
 				console.log(error);
+				res.end("error");
 			} else {
-				res.send("200");
+				res.writeHead(200, {'Content-Type': 'text/plain'});
+  				res.end('sent');
 			}
 		});
 	
@@ -161,11 +163,13 @@ app.get('/sentBill', (req, res) => {
 		smtpTransport.sendMail(mailOptions, function(error, response){
 			if(error) {
 				console.log(error);
+				res.end("error");
 			} else {
-				res.send("200");
+				console.log("success");
+				res.writeHead(200, {'Content-Type': 'text/plain'});
+  				res.end('sent');
 			}
 		});
-	
 	});
 });
 
