@@ -1,9 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>September Billing</title>
 
@@ -23,13 +21,7 @@
   <script type="text/javascript" src="/js/test.js"></script>
 
 </head>
-<nav class="navbar navbar-default" id="nav">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Grass Cutters</a>
-    </div>
-  </div>
-</nav>
+
 
 <style>
     body {
@@ -43,6 +35,14 @@
   </style>
 <body>
 
+<nav class="navbar navbar-default" id="nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Grass Cutters</a>
+    </div>
+  </div>
+</nav>
+
 <div class="customers">
   <div class="header">
     <h1 id="week">September Billing Satements</h1>
@@ -51,10 +51,11 @@
     <div id="padding"><div id="message"></div></div>
   </div>
   <div class="left">
-      <% for(var i=0; i<customers.length; i++) { %>
-      <% if(customers[i].techID == 1) { %>
-        <div id="infoOne">
+      <div id="infoOne">
             <div class="test" id="techOne"></div>
+            <% for(var i=0; i<customers.length; i++) { %>
+            <% if(customers[i].techID == 1) { %>
+        
            <script>
                 var divNum = "<%= i %>";
 
@@ -75,10 +76,11 @@
     </div>
 
     <div class="left">
-      <% for(var i=0; i<customers.length; i++) { %>
-      <% if(customers[i].techID == 2) { %>
-        <div id="infoTwo">
+      <div id="infoTwo">
             <div class="test" id="techTwo"></div>
+            <% for(var i=0; i<customers.length; i++) { %>
+            <% if(customers[i].techID == 2) { %>
+        
            <script>
                 var divNum = "<%= i %>";
 
@@ -98,10 +100,11 @@
     </div>
 
     <div class="left">
-      <% for(var i=0; i<customers.length; i++) { %>
-      <% if(customers[i].techID == 3) { %>
-        <div id="infoThree">
+      <div id="infoThree">
             <div class="test" id="techThree"></div>
+            <% for(var i=0; i<customers.length; i++) { %>
+            <% if(customers[i].techID == 3) { %>
+        
            <script>
                 var divNum = "<%= i %>";
 
