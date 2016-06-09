@@ -21,10 +21,10 @@ function showCustomer(divNum, name, address, email, signUpDate, weekBegin, weekE
   $('#' + tech + '').append(tempDiv);
   tempDiv.attr("id", divNum); 
 
-  var tempName = $('<h1>' + name + ' </h1>');
+  var tempName = $('<h1>Customer: ' + name + ' </h1>');
   $('#' + divNum + '').append(tempName);
 
-  var tempAddress = $('<h4>' + address + ' </h4>');
+  var tempAddress = $('<h4>Address: ' + address + ' </h4>');
   $('#' + divNum + '').append(tempAddress);
 
 

@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
   <link href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" rel="stylesheet" />
   <link href="/css/style.css" rel="stylesheet" />
-  <link href="/css/header.css" rel="stylesheet" />
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
   <!--fonts-->
@@ -24,11 +23,29 @@
     body {
       background-image: url(../images/g.jpeg);
       color: white;
-      overflow: hidden;
     }
 
     .container {
       padding-top: 8%;
+    }
+
+    @media (max-width: 667px) {
+      .techName {
+        font-size: 1.5em;
+      }
+
+      .left {
+        clear: both;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 1em;
+      }
+
+      #b1, #b2, #b3 {
+        padding-bottom: 8%;
+      }
     }
   </style>
 </head>
