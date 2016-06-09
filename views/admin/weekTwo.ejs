@@ -18,7 +18,7 @@
 
   <!--scripts-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script type="text/javascript" src="/js/test.js"></script>
+  <script type="text/javascript" src="/js/controller.js"></script>
 
 <style>
     body {
@@ -73,9 +73,10 @@
                 showCustomer(divNum, name, address, email, temp, beginWeek, endWeek, tech);
 
               </script>
-        </div>
+        
       <% } %>
     <% } %>
+    </div>
     <div id="b1">
       <button class="btn btn-success" id="t1" onclick="emailTech('infoOne', '<%= techs[0].email %>', '<%= techs[0].name %>', 'Week of March 8th - March 14th    -Grass Cutters')">Send Email</button>
     </div>
@@ -101,9 +102,10 @@
 
                 showCustomer(divNum, name, address, email, temp, beginWeek, endWeek, tech);
               </script>
-        </div>
+        
       <% } %>
     <% } %>
+    </div>
     <div id="b2">
       <button class="btn btn-success" id="t2" onclick="emailTech('infoTwo', '<%= techs[1].email %>', '<%= techs[1].name %>', 'Week of March 8th - March 14th    -Grass Cutters')">Send Email</button>
     </div>
@@ -129,9 +131,10 @@
 
                 showCustomer(divNum, name, address, email, temp, beginWeek, endWeek, tech);
               </script>
-        </div>
+        
       <% } %>
     <% } %>
+    </div>
     <div id="b3">
       <button class="btn btn-success" id="t3" onclick="emailTech('infoThree', '<%= techs[2].email %>', '<%= techs[2].name %>', 'Week of March 8th - March 14th    -Grass Cutters')">Send Email</button>
     </div>
